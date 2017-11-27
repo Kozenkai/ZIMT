@@ -1,10 +1,11 @@
 package core;
 
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-class LoginUIController {
+public class LoginUIController {
 
     @FXML
     TextField txfPassword;
@@ -13,4 +14,7 @@ class LoginUIController {
     @FXML
     Button btnOK;
 
+    public void btnOK_OnClick(ActionEvent actionEvent) {
+
+    }
 }
