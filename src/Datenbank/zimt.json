@@ -1,0 +1,14 @@
+/**
+ Export to JSON plugin for PHPMyAdmin
+ @version 0.1
+ */
+
+// Database 'zimt'
+
+// zimt.t_email
+
+[{"id":"55654","email":"ChrossChrispy@zimt.tv"}, {"id":"55654","email":"ChrossChrispy@zimt.berlin"}]
+
+// zimt.t_login
+
+[{"id":"55654","vorname":"Chris","nachname":"Chross","loginname":"ChrossChrispy","passwort":"*8847044C5B239D04ACF5B79548EB4A61F7366A7A","birthday":"1999-05-06","admin":"1","active":"1"}, {"id":"55654","vorname":"Chris","nachname":"Chross","loginname":"ChrossChrispy","passwort":"Chrispychrossy55","birthday":"1999-05-06","admin":"1","active":"1"}]
