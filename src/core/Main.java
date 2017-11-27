@@ -18,7 +18,6 @@ public class Main extends Application {
         primaryStage.getIcons().add(new Image("/core/icon128.png"));
     }
 
-
     public static void main(String[] args) {
         launch(args);
     }
