@@ -11,10 +11,11 @@ import java.io.IOException;
 class MainUI {
 
     MainUI() {
+
         Stage stage = new Stage();
-        stage.setTitle("TESTING");
+        stage.setTitle("ZIMT GmbH & Co KG.");
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("loginUI.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("mainUI.fxml"));
             stage.setScene(new Scene(root));
         } catch (IOException e) {
             e.printStackTrace();

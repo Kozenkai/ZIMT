@@ -3,26 +3,26 @@ package core;
 import java.util.ArrayList;
 import java.util.Date;
 
-class Haus {
+class House {
 
-    private ArrayList<Wohnung> wohnungen;
+    private ArrayList<Apartment> wohnungen;
     private Date reinigungsDatum;
     private double kellerFlaeche;
-    private Addresse addresse;
+    private Adress adress;
 
-    public Haus(ArrayList<Wohnung> wohnungen, Date reinigungsDatum, double kellerFlaeche, Addresse addresse) {
+    public House(ArrayList<Apartment> wohnungen, Date reinigungsDatum, double kellerFlaeche, Adress adress) {
         this.wohnungen = wohnungen;
         this.reinigungsDatum = reinigungsDatum;
         this.kellerFlaeche = kellerFlaeche;
-        this.addresse = addresse;
+        this.adress = adress;
     }
 
-    public Addresse getAddresse() {
-        return addresse;
+    public Adress getAdress() {
+        return adress;
     }
 
-    public void setAddresse(Addresse addresse) {
-        this.addresse = addresse;
+    public void setAdress(Adress adress) {
+        this.adress = adress;
     }
 
     public double getKellerFlaeche() {
@@ -43,35 +43,35 @@ class Haus {
         this.reinigungsDatum = reinigungsDatum;
     }
 
-    public ArrayList<Wohnung> getWohnungen() {
+    public ArrayList<Apartment> getWohnungen() {
 
         return wohnungen;
     }
 
-    public void setWohnungen(ArrayList<Wohnung> wohnungen) {
+    public void setWohnungen(ArrayList<Apartment> wohnungen) {
         this.wohnungen = wohnungen;
     }
 
     @Override
     public String toString() {
-        return "Haus{" +
+        return "House{" +
                 "wohnungen=" + wohnungen +
                 ", reinigungsDatum=" + reinigungsDatum +
                 ", kellerFlaeche=" + kellerFlaeche +
-                ", addresse=" + addresse +
+                ", adress=" + adress +
                 '}';
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Haus)) return false;
+        if (!(o instanceof House)) return false;
 
-        Haus haus = (Haus) o;
+        House house = (House) o;
 
-        if (Double.compare(haus.getKellerFlaeche(), getKellerFlaeche()) != 0) return false;
-        if (!getWohnungen().equals(haus.getWohnungen())) return false;
-        return (getReinigungsDatum() != null ? getReinigungsDatum().equals(haus.getReinigungsDatum()) : haus.getReinigungsDatum() == null) && getAddresse().equals(haus.getAddresse());
+        if (Double.compare(house.getKellerFlaeche(), getKellerFlaeche()) != 0) return false;
+        if (!getWohnungen().equals(house.getWohnungen())) return false;
+        return (getReinigungsDatum() != null ? getReinigungsDatum().equals(house.getReinigungsDatum()) : house.getReinigungsDatum() == null) && getAdress().equals(house.getAdress());
     }
 
     @Override
@@ -82,7 +82,7 @@ class Haus {
         result = 31 * result + (getReinigungsDatum() != null ? getReinigungsDatum().hashCode() : 0);
         temp = Double.doubleToLongBits(getKellerFlaeche());
         result = 31 * result + (int) (temp ^ (temp >>> 32));
-        result = 31 * result + getAddresse().hashCode();
+        result = 31 * result + getAdress().hashCode();
         return result;
     }
 }

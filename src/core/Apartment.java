@@ -1,16 +1,16 @@
 package core;
 
-public class Wohnung {
+public class Apartment {
     private double miete;
     private String mieter;
     private double raeume;
     private double groesse;
     private boolean balkon;
 
-    public Wohnung () {
+    public Apartment() {
     }
 
-    public Wohnung(double miete, String mieter, double raeume, double groesse, boolean balkon) {
+    public Apartment(double miete, String mieter, double raeume, double groesse, boolean balkon) {
         this.miete = miete;
         this.mieter = mieter;
         this.raeume = raeume;
@@ -20,7 +20,7 @@ public class Wohnung {
 
     @Override
     public String toString() {
-        return "Wohnung{" +
+        return "Apartment{" +
                 "miete=" + miete +
                 ", mieter='" + mieter + '\'' +
                 ", raeume=" + raeume +
@@ -76,15 +76,15 @@ public class Wohnung {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Wohnung)) return false;
+        if (!(o instanceof Apartment)) return false;
 
-        Wohnung wohnung = (Wohnung) o;
+        Apartment apartment = (Apartment) o;
 
-        if (Double.compare(wohnung.getMiete(), getMiete()) != 0) return false;
-        if (Double.compare(wohnung.getRaeume(), getRaeume()) != 0) return false;
-        if (Double.compare(wohnung.getGroesse(), getGroesse()) != 0) return false;
-        if (isBalkon() != wohnung.isBalkon()) return false;
-        return getMieter() != null ? getMieter().equals(wohnung.getMieter()) : wohnung.getMieter() == null;
+        if (Double.compare(apartment.getMiete(), getMiete()) != 0) return false;
+        if (Double.compare(apartment.getRaeume(), getRaeume()) != 0) return false;
+        if (Double.compare(apartment.getGroesse(), getGroesse()) != 0) return false;
+        if (isBalkon() != apartment.isBalkon()) return false;
+        return getMieter() != null ? getMieter().equals(apartment.getMieter()) : apartment.getMieter() == null;
     }
 
     @Override

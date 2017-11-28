@@ -2,13 +2,13 @@ package core;
 
 import java.util.Date;
 
-class Mieter {
+class Tenant {
     private String vorname;
     private String nachname;
     private Date mietdauer;
     private Boolean verzug;
 
-    public Mieter(String vorname, String nachname, Date mietdauer, Boolean verzug) {
+    public Tenant(String vorname, String nachname, Date mietdauer, Boolean verzug) {
         this.vorname = vorname;
         this.nachname = nachname;
         this.mietdauer = mietdauer;
@@ -50,17 +50,17 @@ class Mieter {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Mieter)) return false;
+        if (!(o instanceof Tenant)) return false;
 
-        Mieter mieter = (Mieter) o;
+        Tenant tenant = (Tenant) o;
 
-        if (getVorname() != null ? !getVorname().equals(mieter.getVorname()) : mieter.getVorname() != null)
+        if (getVorname() != null ? !getVorname().equals(tenant.getVorname()) : tenant.getVorname() != null)
             return false;
-        if (getNachname() != null ? !getNachname().equals(mieter.getNachname()) : mieter.getNachname() != null)
+        if (getNachname() != null ? !getNachname().equals(tenant.getNachname()) : tenant.getNachname() != null)
             return false;
-        if (getMietdauer() != null ? !getMietdauer().equals(mieter.getMietdauer()) : mieter.getMietdauer() != null)
+        if (getMietdauer() != null ? !getMietdauer().equals(tenant.getMietdauer()) : tenant.getMietdauer() != null)
             return false;
-        return getVerzug() != null ? getVerzug().equals(mieter.getVerzug()) : mieter.getVerzug() == null;
+        return getVerzug() != null ? getVerzug().equals(tenant.getVerzug()) : tenant.getVerzug() == null;
     }
 
     @Override
@@ -74,7 +74,7 @@ class Mieter {
 
     @Override
     public String toString() {
-        return "Mieter{" +
+        return "Tenant{" +
                 "vorname='" + vorname + '\'' +
                 ", nachname='" + nachname + '\'' +
                 ", mietdauer=" + mietdauer +
