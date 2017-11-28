@@ -3,6 +3,7 @@ package core;
 
 public class Adress {
 
+
     private String strasse;
     private String hausnr;
     private String plz;
