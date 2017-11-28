@@ -16,6 +16,17 @@ public class LoginUIController {
     TextField txfUsername;
     @FXML
     Button btnOK;
+    @FXML
+    Button btnNewUser;
+    @FXML
+    RadioButton rdbGUI;
+    @FXML
+    RadioButton rdbCLI;
+
+    public void initialize() {
+        rdbGUI.setSelected(true);
+        rdbCLI.setSelected(false);
+    }
 
     public void btnOK_OnClick(ActionEvent actionEvent) {
         /*
@@ -30,6 +41,7 @@ public class LoginUIController {
         */
     }
 
+    public void btnNewUser_OnClick(ActionEvent actionEvent) {
 
-
+    }
 }
