@@ -10,6 +10,8 @@ public class LoginUIController {
 
     //Schnittstelle schnitt = new Schnittstelle();
 
+    private ToggleGroup toggleGroup = new ToggleGroup();
+
     @FXML
     TextField txfPassword;
     @FXML
@@ -26,6 +28,8 @@ public class LoginUIController {
     public void initialize() {
         rdbGUI.setSelected(true);
         rdbCLI.setSelected(false);
+        rdbGUI.setToggleGroup(toggleGroup);
+        rdbCLI.setToggleGroup(toggleGroup);
     }
 
     public void btnOK_OnClick(ActionEvent actionEvent) {
