@@ -24,7 +24,7 @@ class MainUI {
 
         stage.setResizable(false);
         stage.show();
-        stage.getIcons().add(new Image("/core/icon128.png"));
+        stage.getIcons().add(new Image("/core/icon256.png"));
 
     }
 

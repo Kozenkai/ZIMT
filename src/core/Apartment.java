@@ -1,76 +1,69 @@
 package core;
 
-public class Apartment {
-    private double miete;
-    private String mieter;
-    private double raeume;
-    private double groesse;
-    private boolean balkon;
+class Apartment {
+    private double rent;
+    private Tenant tenant;
+    private double rooms;
+    private double size;
+    private boolean balcony;
 
-    public Apartment() {
+    Apartment(double rent, Tenant tenant, double rooms, double size, boolean balcony) {
+        this.rent = rent;
+        this.tenant = tenant;
+        this.rooms = rooms;
+        this.size = size;
+        this.balcony = balcony;
     }
 
-    public Apartment(double miete, String mieter, double raeume, double groesse, boolean balkon) {
-        this.miete = miete;
-        this.mieter = mieter;
-        this.raeume = raeume;
-        this.groesse = groesse;
-        this.balkon = balkon;
+    boolean hasBalcony() {
+        return balcony;
+    }
+
+    void setBalcony(boolean balcony) {
+        this.balcony = balcony;
+    }
+
+    double getSize() {
+        return size;
+    }
+
+    void setSize(double size) {
+        this.size = size;
+    }
+
+    double getRooms() {
+        return rooms;
+    }
+
+    void setRooms(double rooms) {
+        this.rooms = rooms;
+    }
+
+    Tenant getTenant() {
+        return tenant;
+    }
+
+    void setTenant(Tenant tenant) {
+        this.tenant = tenant;
+    }
+
+    double getRent() {
+        return rent;
+    }
+
+    void setRent(double rent) {
+        this.rent = rent;
     }
 
     @Override
     public String toString() {
         return "Apartment{" +
-                "miete=" + miete +
-                ", mieter='" + mieter + '\'' +
-                ", raeume=" + raeume +
-                ", groesse=" + groesse +
-                ", balkon=" + balkon +
-                '}';
-    }
-
-    public boolean isBalkon() {
-        return balkon;
-    }
-
-    public void setBalkon(boolean balkon) {
-        this.balkon = balkon;
-    }
-
-    public double getGroesse() {
-
-        return groesse;
-    }
-
-    public void setGroesse(double groesse) {
-        this.groesse = groesse;
-    }
-
-    public double getRaeume() {
-
-        return raeume;
-    }
-
-    public void setRaeume(double raeume) {
-        this.raeume = raeume;
-    }
-
-    public String getMieter() {
-
-        return mieter;
-    }
-
-    public void setMieter(String mieter) {
-        this.mieter = mieter;
-    }
-
-    public double getMiete() {
-
-        return miete;
-    }
-
-    public void setMiete(double miete) {
-        this.miete = miete;
+                       "rent=" + rent +
+                       ", tenant='" + tenant + '\'' +
+                       ", rooms=" + rooms +
+                       ", size=" + size +
+                       ", balcony=" + balcony +
+                       '}';
     }
 
     @Override
@@ -80,25 +73,25 @@ public class Apartment {
 
         Apartment apartment = (Apartment) o;
 
-        if (Double.compare(apartment.getMiete(), getMiete()) != 0) return false;
-        if (Double.compare(apartment.getRaeume(), getRaeume()) != 0) return false;
-        if (Double.compare(apartment.getGroesse(), getGroesse()) != 0) return false;
-        if (isBalkon() != apartment.isBalkon()) return false;
-        return getMieter() != null ? getMieter().equals(apartment.getMieter()) : apartment.getMieter() == null;
+        return Double.compare(apartment.getRent(),getRent()) == 0 &&
+               Double.compare(apartment.getRooms(),getRooms()) == 0 &&
+               Double.compare(apartment.getSize(),getSize()) == 0 &&
+               hasBalcony() == apartment.hasBalcony() &&
+               (getTenant() != null ? getTenant().equals(apartment.getTenant()) : apartment.getTenant() == null);
     }
 
     @Override
     public int hashCode() {
         int result;
         long temp;
-        temp = Double.doubleToLongBits(getMiete());
+        temp = Double.doubleToLongBits(getRent());
         result = (int) (temp ^ (temp >>> 32));
-        result = 31 * result + (getMieter() != null ? getMieter().hashCode() : 0);
-        temp = Double.doubleToLongBits(getRaeume());
+        result = 31 * result + (getTenant() != null ? getTenant().hashCode() : 0);
+        temp = Double.doubleToLongBits(getRooms());
         result = 31 * result + (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(getGroesse());
+        temp = Double.doubleToLongBits(getSize());
         result = 31 * result + (int) (temp ^ (temp >>> 32));
-        result = 31 * result + (isBalkon() ? 1 : 0);
+        result = 31 * result + (hasBalcony() ? 1 : 0);
         return result;
     }
 }

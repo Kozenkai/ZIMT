@@ -3,48 +3,58 @@ package core;
 import java.util.Date;
 
 class Tenant {
-    private String vorname;
-    private String nachname;
-    private Date mietdauer;
-    private Boolean verzug;
+    private String firstName;
+    private String lastName;
+    private Date rentalPeriod;
+    private boolean overdue;
 
-    public Tenant(String vorname, String nachname, Date mietdauer, Boolean verzug) {
-        this.vorname = vorname;
-        this.nachname = nachname;
-        this.mietdauer = mietdauer;
-        this.verzug = verzug;
+    Tenant(String firstName, String lastName, Date rentalPeriod, boolean overdue) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.rentalPeriod = rentalPeriod;
+        this.overdue = overdue;
     }
 
-    public String getVorname() {
-        return vorname;
+    String getFirstName() {
+        return firstName;
     }
 
-    public void setVorname(String vorname) {
-        this.vorname = vorname;
+    void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getNachname() {
-        return nachname;
+    String getLastName() {
+        return lastName;
     }
 
-    public void setNachname(String nachname) {
-        this.nachname = nachname;
+    void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public Date getMietdauer() {
-        return mietdauer;
+    Date getRentalPeriod() {
+        return rentalPeriod;
     }
 
-    public void setMietdauer(Date mietdauer) {
-        this.mietdauer = mietdauer;
+    void setRentalPeriod(Date rentalPeriod) {
+        this.rentalPeriod = rentalPeriod;
     }
 
-    public Boolean getVerzug() {
-        return verzug;
+    Boolean getOverdue() {
+        return overdue;
     }
 
-    public void setVerzug(Boolean verzug) {
-        this.verzug = verzug;
+    void setOverdue(Boolean overdue) {
+        this.overdue = overdue;
+    }
+
+    @Override
+    public String toString() {
+        return "Tenant{" +
+                       "firstName='" + firstName + '\'' +
+                       ", lastName='" + lastName + '\'' +
+                       ", rentalPeriod=" + rentalPeriod +
+                       ", overdue=" + overdue +
+                       '}';
     }
 
     @Override
@@ -54,31 +64,18 @@ class Tenant {
 
         Tenant tenant = (Tenant) o;
 
-        if (getVorname() != null ? !getVorname().equals(tenant.getVorname()) : tenant.getVorname() != null)
-            return false;
-        if (getNachname() != null ? !getNachname().equals(tenant.getNachname()) : tenant.getNachname() != null)
-            return false;
-        if (getMietdauer() != null ? !getMietdauer().equals(tenant.getMietdauer()) : tenant.getMietdauer() != null)
-            return false;
-        return getVerzug() != null ? getVerzug().equals(tenant.getVerzug()) : tenant.getVerzug() == null;
+        return (getFirstName() != null ? getFirstName().equals(tenant.getFirstName()) : tenant.getFirstName() == null) &&
+               (getLastName() != null ? getLastName().equals(tenant.getLastName()) : tenant.getLastName() == null) &&
+               (getRentalPeriod() != null ? getRentalPeriod().equals(tenant.getRentalPeriod()) : tenant.getRentalPeriod() == null) &&
+               (getOverdue() != null ? getOverdue().equals(tenant.getOverdue()) : tenant.getOverdue() == null);
     }
 
     @Override
     public int hashCode() {
-        int result = getVorname() != null ? getVorname().hashCode() : 0;
-        result = 31 * result + (getNachname() != null ? getNachname().hashCode() : 0);
-        result = 31 * result + (getMietdauer() != null ? getMietdauer().hashCode() : 0);
-        result = 31 * result + (getVerzug() != null ? getVerzug().hashCode() : 0);
+        int result = getFirstName() != null ? getFirstName().hashCode() : 0;
+        result = 31 * result + (getLastName() != null ? getLastName().hashCode() : 0);
+        result = 31 * result + (getRentalPeriod() != null ? getRentalPeriod().hashCode() : 0);
+        result = 31 * result + (getOverdue() != null ? getOverdue().hashCode() : 0);
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "Tenant{" +
-                "vorname='" + vorname + '\'' +
-                ", nachname='" + nachname + '\'' +
-                ", mietdauer=" + mietdauer +
-                ", verzug=" + verzug +
-                '}';
     }
 }

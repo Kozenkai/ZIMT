@@ -1,7 +1,7 @@
 package core;
 
 
-public class Adress {
+public class Address {
 
 
     private String strasse;
@@ -9,7 +9,7 @@ public class Adress {
     private String plz;
     private String zusatz;
 
-    public Adress(String strasse, String hausnr, String plz, String zusatz) {
+    public Address(String strasse,String hausnr,String plz,String zusatz) {
         this.strasse = strasse;
         this.hausnr = hausnr;
         this.plz = plz;
@@ -54,7 +54,7 @@ public class Adress {
 
     @Override
     public String toString() {
-        return "Adress{" +
+        return "Address{" +
                 "strasse='" + strasse + '\'' +
                 ", hausnr='" + hausnr + '\'' +
                 ", plz='" + plz + '\'' +
@@ -65,16 +65,16 @@ public class Adress {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Adress)) return false;
+        if (!(o instanceof Address)) return false;
 
-        Adress adress = (Adress) o;
+        Address address = (Address) o;
 
-        if (getStrasse() != null ? !getStrasse().equals(adress.getStrasse()) : adress.getStrasse() != null)
+        if (getStrasse() != null ? !getStrasse().equals(address.getStrasse()) : address.getStrasse() != null)
             return false;
-        if (getHausnr() != null ? !getHausnr().equals(adress.getHausnr()) : adress.getHausnr() != null)
+        if (getHausnr() != null ? !getHausnr().equals(address.getHausnr()) : address.getHausnr() != null)
             return false;
-        if (getPlz() != null ? !getPlz().equals(adress.getPlz()) : adress.getPlz() != null) return false;
-        return getZusatz() != null ? getZusatz().equals(adress.getZusatz()) : adress.getZusatz() == null;
+        if (getPlz() != null ? !getPlz().equals(address.getPlz()) : address.getPlz() != null) return false;
+        return getZusatz() != null ? getZusatz().equals(address.getZusatz()) : address.getZusatz() == null;
     }
 
     @Override

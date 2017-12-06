@@ -5,60 +5,57 @@ import java.util.Date;
 
 class House {
 
-    private ArrayList<Apartment> wohnungen;
-    private Date reinigungsDatum;
-    private double kellerFlaeche;
-    private Adress adress;
+    private ArrayList<Apartment> apartments;
+    private Date lastCleaned;
+    private double basementSize;
+    private Address address;
 
-    public House(ArrayList<Apartment> wohnungen, Date reinigungsDatum, double kellerFlaeche, Adress adress) {
-        this.wohnungen = wohnungen;
-        this.reinigungsDatum = reinigungsDatum;
-        this.kellerFlaeche = kellerFlaeche;
-        this.adress = adress;
+    House(ArrayList<Apartment> apartments, Date lastCleaned, double basementSize, Address address) {
+        this.apartments = apartments;
+        this.lastCleaned = lastCleaned;
+        this.basementSize = basementSize;
+        this.address = address;
     }
 
-    public Adress getAdress() {
-        return adress;
+    Address getAddress() {
+        return address;
     }
 
-    public void setAdress(Adress adress) {
-        this.adress = adress;
+    void setAddress(Address address) {
+        this.address = address;
     }
 
-    public double getKellerFlaeche() {
-
-        return kellerFlaeche;
+    double getBasementSize() {
+        return basementSize;
     }
 
-    public void setKellerFlaeche(double kellerFlaeche) {
-        this.kellerFlaeche = kellerFlaeche;
+    void setBasementSize(double basementSize) {
+        this.basementSize = basementSize;
     }
 
-    public Date getReinigungsDatum() {
-
-        return reinigungsDatum;
+    Date getLastCleaned() {
+        return lastCleaned;
     }
 
-    public void setReinigungsDatum(Date reinigungsDatum) {
-        this.reinigungsDatum = reinigungsDatum;
+    void setLastCleaned(Date lastCleaned) {
+        this.lastCleaned = lastCleaned;
     }
 
-    public ArrayList<Apartment> getWohnungen() {
-
-        return wohnungen;
+    ArrayList<Apartment> getApartments() {
+        return apartments;
     }
 
-    public void setWohnungen(ArrayList<Apartment> wohnungen) {
-        this.wohnungen = wohnungen;
+    void setApartments(ArrayList<Apartment> apartments) {
+        this.apartments = apartments;
     }
 
     @Override
     public String toString() {
         return "House{" +
-                "wohnungen=" + wohnungen +
-                ", reinigungsDatum=" + reinigungsDatum +
-                ", kellerFlaeche=" + kellerFlaeche +
-                ", adress=" + adress +
+                "apartments=" + apartments +
+                ", lastCleaned=" + lastCleaned +
+                ", basementSize=" + basementSize +
+                ", address=" + address +
                 '}';
     }
 
@@ -69,20 +66,21 @@ class House {
 
         House house = (House) o;
 
-        if (Double.compare(house.getKellerFlaeche(), getKellerFlaeche()) != 0) return false;
-        if (!getWohnungen().equals(house.getWohnungen())) return false;
-        return (getReinigungsDatum() != null ? getReinigungsDatum().equals(house.getReinigungsDatum()) : house.getReinigungsDatum() == null) && getAdress().equals(house.getAdress());
+        return Double.compare(house.getBasementSize(),getBasementSize()) == 0 &&
+               getApartments().equals(house.getApartments()) &&
+               (getLastCleaned() != null ? getLastCleaned().equals(house.getLastCleaned()) : house.getLastCleaned() == null) &&
+               getAddress().equals(house.getAddress());
     }
 
     @Override
     public int hashCode() {
         int result;
         long temp;
-        result = getWohnungen().hashCode();
-        result = 31 * result + (getReinigungsDatum() != null ? getReinigungsDatum().hashCode() : 0);
-        temp = Double.doubleToLongBits(getKellerFlaeche());
+        result = getApartments().hashCode();
+        result = 31 * result + (getLastCleaned() != null ? getLastCleaned().hashCode() : 0);
+        temp = Double.doubleToLongBits(getBasementSize());
         result = 31 * result + (int) (temp ^ (temp >>> 32));
-        result = 31 * result + getAdress().hashCode();
+        result = 31 * result + getAddress().hashCode();
         return result;
     }
 }
