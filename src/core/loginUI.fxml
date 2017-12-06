@@ -38,13 +38,16 @@
          </font>
       </Label>
       <Label text="Password :" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-      <Button fx:id="btnOK" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnOK_OnClick" prefHeight="30.0" prefWidth="75.0" text="Login" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+      <Button fx:id="btnOK" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity"
+              mnemonicParsing="false" onAction="#btnLogin_OnClick" prefHeight="30.0" prefWidth="75.0" text="Login"
+              GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
          <font>
             <Font name="Calibri" size="12.0" />
          </font>
       </Button>
       <TextField fx:id="txfUsername" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-      <PasswordField fx:id="txfPassword" onAction="#btnOK_OnClick" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <PasswordField fx:id="txfPassword" onAction="#btnLogin_OnClick" GridPane.columnIndex="1"
+                     GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
       <Button fx:id="btnNewUser" mnemonicParsing="false" onAction="#btnNewUser_OnClick" prefHeight="30.0" prefWidth="75.0" text="New User ?" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
          <font>
             <Font name="Calibri" size="12.0" />

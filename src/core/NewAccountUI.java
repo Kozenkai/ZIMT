@@ -8,14 +8,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-class MainUI {
-
-    MainUI() {
+class NewAccountUI {
+    NewAccountUI() {
 
         Stage stage = new Stage();
-        stage.setTitle("ZIMT GmbH & Co KG.");
+        stage.setTitle("ZIMT GmbH & Co KG. - New Account");
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("mainUI.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("newAccountUI.fxml"));
             stage.setScene(new Scene(root));
         } catch (IOException e) {
             e.printStackTrace();

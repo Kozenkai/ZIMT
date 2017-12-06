@@ -16,6 +16,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
         primaryStage.getIcons().add(new Image("/core/icon128.png"));
+        primaryStage.setResizable(false);
     }
 
     public static void main(String[] args) {

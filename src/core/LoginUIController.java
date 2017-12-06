@@ -32,7 +32,7 @@ public class LoginUIController {
         rdbCLI.setToggleGroup(toggleGroup);
     }
 
-    public void btnOK_OnClick(ActionEvent actionEvent) {
+    public void btnLogin_OnClick(ActionEvent actionEvent) {
         /*
         Vector users = schnitt.getUsers();
         for ( User u : users ) {
@@ -43,9 +43,14 @@ public class LoginUIController {
             }
         }
         */
+        Stage stage = (Stage) btnOK.getScene().getWindow();
+        new MainUI();
+        stage.close();
     }
 
     public void btnNewUser_OnClick(ActionEvent actionEvent) {
-
+        Stage stage = (Stage) btnOK.getScene().getWindow();
+        new NewAccountUI();
+        stage.close();
     }
 }

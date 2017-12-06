@@ -6,9 +6,78 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="core.MainUIController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="625.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="core.MainUIController">
+   <children>
+      <TabPane prefHeight="625.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab closable="false" text="Appartments">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="800.0">
+                     <children>
+                        <TableView editable="true" prefHeight="555.0" prefWidth="800.0">
+                          <columns>
+                            <TableColumn fx:id="colApaRent" prefWidth="160.0" text="Rent" />
+                            <TableColumn fx:id="colApaTenant" prefWidth="320.0" text="Tenant" />
+                            <TableColumn fx:id="colApaRooms" prefWidth="125.0" text="Rooms" />
+                            <TableColumn fx:id="colApaSize" prefWidth="110.0" text="Size m²" />
+                            <TableColumn fx:id="colApaBalcony" prefWidth="85.0" text="Balcony" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="btnRent" layoutX="696.0" layoutY="555.0" mnemonicParsing="false" onAction="#btnRent_OnClick" prefHeight="35.0" prefWidth="90.0" text="rent +1" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab closable="false" text="Houses">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="800.0">
+                     <children>
+                        <TableView editable="true" prefHeight="600.0" prefWidth="800.0">
+                           <columns>
+                              <TableColumn fx:id="colHouApartments" prefWidth="300.0" text="Appartments" />
+                              <TableColumn fx:id="colHouAddress" prefWidth="300.0" text="Address" />
+                              <TableColumn fx:id="colHouLastCleaned" prefWidth="90.0" text="last cleaned" />
+                              <TableColumn fx:id="colHouBasement" prefWidth="110.0" text="Basement Size m²" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab closable="false" text="Tenants">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView editable="true" prefHeight="600.0" prefWidth="800.0">
+                           <columns>
+                              <TableColumn fx:id="colTenFirstName" prefWidth="260.0" text="first name" />
+                              <TableColumn fx:id="colTenLastName" prefWidth="280.0" text="last name" />
+                              <TableColumn fx:id="colTenSince" prefWidth="140.0" text="tenant since" />
+                              <TableColumn fx:id="colTenBehind" prefWidth="120.0" text="behind on payment" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab closable="false" text="Users">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView editable="true" prefHeight="600.0" prefWidth="800.0">
+                           <columns>
+                              <TableColumn fx:id="colUseUsername" prefWidth="75.0" text="Username" />
+                              <TableColumn prefWidth="75.0" />
+                              <TableColumn prefWidth="75.0" />
+                              <TableColumn prefWidth="75.0" />
+                              <TableColumn prefWidth="75.0" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
 </AnchorPane>
